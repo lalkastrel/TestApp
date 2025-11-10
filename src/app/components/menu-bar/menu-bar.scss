@@ -7,6 +7,8 @@
     margin: 0;
     flex-direction: column;
     position: relative;
+    --grey: #E8E4DE;
+    --dark-grey: #555555;
 }
 
 @media (min-width: 768px) {
@@ -22,6 +24,9 @@ li {
     font-weight: 700;
     height: 36px;
     margin-bottom: 15px;
+    &:hover {
+        color: var(--grey);
+    }
 }
 
 
@@ -59,10 +64,19 @@ ul {
     gap: 10px;
     left: 0;
     right: 0;
+
+    tui-icon {
+        &:hover {
+            color: var(--dark-grey) !important;
+        }
+    }
 }
 
 .close-btn {
     position: absolute;
     top: 20px;
     right: 20px;
+    &:hover {
+        color: var(--dark-grey) !important;
+    }
 }
