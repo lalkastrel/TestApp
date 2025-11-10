@@ -1,7 +1,7 @@
 
 :host {
     display: flex;
-    width: 250px;
+    width: 250px !important;
     height: 100vh;
     background: #FFA501;
     margin: 0;
@@ -13,19 +13,22 @@
 
 @media (min-width: 768px) {
 :host {
-        width: 345px;
+        width: 345px !important;
     }
 }
 
 li {
     list-style-type: none;
     font-size: 24px;
-    color: white;
     font-weight: 700;
     height: 36px;
     margin-bottom: 15px;
-    &:hover {
-        color: var(--grey);
+    a {
+        text-decoration: none;
+        color:white;
+        &:hover {
+            color: var(--grey);
+        }
     }
 }
 

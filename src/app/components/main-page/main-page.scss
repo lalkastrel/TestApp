@@ -2,7 +2,7 @@
     --grey: #E8E4DE;
     --dark-grey: #555555;
     --orange: #FFA501;
-    --blue: #86c4e7;
+    --blue: #b5e0f8;
 }
 @mixin center{
 
@@ -11,7 +11,45 @@
 @mixin left {
 
 }
+
+.content {
+    margin: 0px 20vw;
+    p {
+        text-wrap: wrap;
+    }
+}
+
+.three-lines {
+    position: fixed;
+    right: 30px;
+    top: 36px;
+    width: 30px;
+    height: 15px;
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+    cursor: pointer;
+    overflow: visible;
+    &::before {
+        content: "";
+        position: absolute;
+        left: -6px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 3px;
+        background: #000;
+    }
+}
+
+.to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+}
+
 #hero-section {
+    top: -16px;
+    padding-top: 0px;
     margin-top: 0px;
     width: 100vw;
     height: 800px;
@@ -24,15 +62,42 @@
         width: 135px;
         height: 45px;
         border: none;
-        background-color: var(--blue);
+        background-color: rgba(0, 0, 0, 0);
         &:first-of-type {
             background-color: var(--orange);
             box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
         }
-        &:hover {
-            color: var(--dark-grey);
+    }
+    .content {
+        position: absolute;
+        top: 206px;
+    }
+}
+
+#about-me {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    li {
+        
+        
+        p {
+            max-width: 260px;
         }
     }
+}
+
+button {
+    a {
+        &:hover {
+        color: var(--dark-grey) !important;
+        }
+    }
+}
+a {
+    text-decoration: none;
+    color: black;
 }
 
 p {
@@ -53,6 +118,12 @@ h2 {
 h3 {
     font-weight: 700;
     font-size: 16px;
+    color: black;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 14px;
     color: black;
 }
 
@@ -82,13 +153,27 @@ h3 {
                 color: var(--dark-grey) !important;
             }
         }
-       
     }
     .line {
         width: 70px;
         height: 2px;
         background-color: black;
     }
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translateX(-50%);;
+    transform-origin: left;
+}
+
+.fixed {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+}
+
+.blur {
+    background: rgba($color: white, $alpha: 0.7);
+    flex: 1;
+    height: 100vh;
 }
 

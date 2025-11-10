@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 
 import {TuiIcon, TuiIconPipe} from '@taiga-ui/core';
 
@@ -9,5 +9,9 @@ import {TuiIcon, TuiIconPipe} from '@taiga-ui/core';
   styleUrl: './menu-bar.scss',
 })
 export class MenuBar {
+  @Output() menuClosed = new EventEmitter<boolean>();
 
+  closeMenu() {
+    this.menuClosed.emit(false);
+  }
 }

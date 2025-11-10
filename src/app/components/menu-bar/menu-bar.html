@@ -1,16 +1,22 @@
-<div>
-<tui-icon icon="@tui.x" [style.color]="'black'" [style.font-size.px]="34" class="close-btn"/>
+<div class="menu">
+<tui-icon icon="@tui.x" [style.color]="'black'" [style.font-size.px]="34" class="close-btn" (click)="closeMenu()"/>
 <ul>
-    <li>ПРО МЕНЯ</li>
-    <li>МОЙ ОПЫТ</li>
-    <li>МОИ НАВЫКИ</li>
-    <li>МОИ РАБОТЫ</li>
-    <li>ПРАЙС-ЛИСТ</li>
-    <li>КОНТАКТЫ</li>
+    <li (click)="closeMenu()"><a href="#about-me">ПРО МЕНЯ</a></li>
+    <li (click)="closeMenu()"><a href="#expirience">МОЙ ОПЫТ</a></li>
+    <li (click)="closeMenu()"><a href="#skills">МОИ НАВЫКИ</a></li>
+    <li (click)="closeMenu()"><a href="#portfolio">МОИ РАБОТЫ</a></li>
+    <li (click)="closeMenu()"><a href="#price-list">ПРАЙС-ЛИСТ</a></li>
+    <li (click)="closeMenu()"><a href="#contacts">КОНТАКТЫ</a></li>
 </ul>
 <div class="socials">
-    <tui-icon icon="@tui.github" [style.color]="'black'"/>
-    <tui-icon icon="@tui.instagram" [style.color]="'black'"/>
-    <tui-icon icon="@tui.facebook" [style.color]="'black'"/>
+    <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
+        <tui-icon icon="@tui.github" [style.color]="'black'"/>
+    </a>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <tui-icon icon="@tui.instagram" [style.color]="'black'"/>
+    </a>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <tui-icon icon="@tui.facebook" [style.color]="'black'"/>
+    </a>
 </div>
 </div>
