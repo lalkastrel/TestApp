@@ -381,6 +381,7 @@ h4 {
 .fixed {
     display: flex;
     position: fixed;
+    z-index: 2;
     top: 0px;
     left: 0px;
     width: 100vw;
