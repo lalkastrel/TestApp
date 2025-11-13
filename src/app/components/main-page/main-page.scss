@@ -4,6 +4,13 @@
     --orange: #FFA501;
     --blue: #b5e0f8;
 }
+
+@mixin desktop {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
 @mixin center{
 
 }
@@ -13,9 +20,22 @@
 }
 
 .content {
-    margin: 0px 20vw;
+    margin: 0px 10px 0px 8px;
     p {
         text-wrap: wrap;
+    }
+    @include desktop {
+        margin: 0px 15vw;
+    }
+}
+
+.content > div {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 40px;
+
+    @include desktop{
+        padding-bottom: 120px;
     }
 }
 
@@ -59,6 +79,7 @@
     button {
         padding: 0px;
         font-size: 14px;
+        font-weight: 700;
         width: 135px;
         height: 45px;
         border: none;
@@ -71,6 +92,39 @@
     .content {
         position: absolute;
         top: 206px;
+    }
+    .socials-left {
+        visibility: hidden;
+        @include desktop {
+            visibility: visible;
+            display: flex;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 50px;
+            justify-content: center;
+            align-items: center;
+            margin: auto;           
+            gap: 15px;
+            font-weight: 700 !important; 
+            .socials {
+                display: flex;
+                justify-content: space-between;
+                width: 102px;
+                tui-icon {
+                    &:hover {
+                        color: var(--dark-grey) !important;
+                    }
+                }
+            }
+            .line {
+                width: 70px;
+                height: 2px;
+                background-color: black;
+            }
+            transform: rotate(-90deg) translateX(-50%);;
+            transform-origin: left;
+        } 
     }
 }
 
@@ -85,6 +139,116 @@
         p {
             max-width: 260px;
         }
+    }
+}
+
+#skills {
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 45px;
+        margin: 0;
+        padding: 0;
+        li {
+            height: 70px;
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            div {
+                display: flex;
+                justify-content: space-between;
+            }
+            h4:first-of-type {
+                left: 0px;
+                top: 0px;
+            }
+            h4:last-of-type {
+                font-weight: 500;
+                right: 0px;
+                top: 0px;
+            }
+        }
+    }
+}
+
+#expirience {
+    .outer-box {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 0px;
+        padding: 0px;
+        .inner-box {
+            max-width: 425px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-left: 50px;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 10px;
+                transform: translateY(-50%);
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background: var(--orange);
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0px;
+                padding: 0px;
+                margin-left: -43px;
+                margin-top: -3px;
+                padding-top: 3px;
+                padding-left: 43px;
+                border-left: 1px solid black;
+                li {
+                    position: relative;
+                    padding-top: 45px;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        background: var(--orange);
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: -43px;
+                        top: 63px;
+                        width: 43px;
+                        height: 1px;
+                        background: black;
+                    }
+                }
+                
+            }
+        }
+
+        h2 {
+            font-size: 20px !important;
+            margin: 0;
+        }
+        h3 {
+            font-size: 14 !important;
+            padding-left: 56px;
+            margin: 0;
+        }
+        h4 {
+            font-size: 12 !important;
+            font-weight: 500;
+            padding-left: 56px;
+            margin: 0;
+        }
+    }
+    p {
+        margin: 0px;
     }
 }
 
@@ -106,13 +270,19 @@ p {
 h1 {
     line-height: 1.5em;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 26px;
     color:black;
-}
+    @include desktop {
+        font-size: 48px; 
+    }
+} 
 h2 {
     font-weight: 700;
-    font-size: 36px;
+    font-size: 24px;
     color: black;
+    @include desktop {
+        font-size: 36px;
+    }
 }
 
 h3 {
@@ -133,35 +303,7 @@ h4 {
     background-color: var(--orange);
 }
 
-.socials-left {
-    display: flex;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 50px;
-    justify-content: center;
-    align-items: center;
-    margin: auto;           
-    gap: 15px;
-    font-weight: 700 !important; 
-    .socials {
-        display: flex;
-        justify-content: space-between;
-        width: 102px;
-        tui-icon {
-            &:hover {
-                color: var(--dark-grey) !important;
-            }
-        }
-    }
-    .line {
-        width: 70px;
-        height: 2px;
-        background-color: black;
-    }
-    transform: rotate(-90deg) translateX(-50%);;
-    transform-origin: left;
-}
+
 
 .fixed {
     display: flex;
