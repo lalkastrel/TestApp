@@ -76,6 +76,12 @@
     background-color: var(--blue);
     position: relative;
     font-weight: 700;
+    .circle::before {
+        z-index: 0;
+    }
+    h3 {
+        z-index: 1;
+    }
     button {
         padding: 0px;
         font-size: 14px;
@@ -129,14 +135,58 @@
 }
 
 #about-me {
+    .orange-line {
+        margin-bottom: 20px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    @include desktop {
+        flex-wrap: nowrap;
+    }
+    h3 {
+        padding-top: 6px;
+    }
+    img {
+        flex-shrink: 0;
+        padding-right: 68px;
+        max-height: 600px;
+        max-width: 400px;
+        width: 100%;
+        height: 100%;
+    }
+    div:first-of-type {
+        flex: 1;
+    }
+    p:first-of-type {
+        padding-bottom: 40px;
+    }
     ul {
         display: flex;
         flex-wrap: wrap;
+        list-style-type: none;
+        padding: 0;
     }
     li {
-        
-        
+        max-width: 260px;
+        padding-right: 50px;
+        padding-left: 50px;
+        padding-bottom: 20px;
+        position: relative;
+        &::before {
+            content: '';
+            width: 36px;
+            height: 36px;
+            position: absolute;
+            left: 0px;
+            background: var(--orange);
+            border-radius: 50%;
+        }
+        h4 {
+            margin: 0;
+            padding-bottom: 6px;
+        }
         p {
+            margin: 0;
             max-width: 260px;
         }
     }
@@ -179,17 +229,19 @@
         flex-direction: row;
         margin: 0px;
         padding: 0px;
+        justify-content: space-between;
         .inner-box {
             max-width: 425px;
             display: flex;
             flex-direction: column;
             position: relative;
             padding-left: 50px;
+            padding-bottom: 40px;
             &::before {
                 content: '';
                 position: absolute;
                 left: 0;
-                top: 10px;
+                top: 15px;
                 transform: translateY(-50%);
                 width: 15px;
                 height: 15px;
@@ -202,7 +254,7 @@
                 margin: 0px;
                 padding: 0px;
                 margin-left: -43px;
-                margin-top: -3px;
+                margin-top: -8px;
                 padding-top: 3px;
                 padding-left: 43px;
                 border-left: 1px solid black;
@@ -277,30 +329,50 @@ h1 {
     }
 } 
 h2 {
+    line-height: 1.5em;
     font-weight: 700;
     font-size: 24px;
     color: black;
+    margin-top: 6px;
+    margin-bottom: 25px;
     @include desktop {
         font-size: 36px;
     }
 }
 
 h3 {
+    line-height: 1.5em;
     font-weight: 700;
     font-size: 16px;
     color: black;
+    position: relative;
+}
+
+h3.circle::before {
+    content: '';
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    margin-left: -12px;
+    margin-top: -6px;
+    border-radius: 50%;
+    background: var(--orange);
+    z-index: -1;
 }
 
 h4 {
+    line-height: 1.5em;
     font-weight: 700;
     font-size: 14px;
     color: black;
 }
 
 .orange-line {
+    display: block;
     width: 60px;
     height: 3px;
     background-color: var(--orange);
+    margin-bottom: 60px;
 }
 
 
